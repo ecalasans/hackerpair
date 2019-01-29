@@ -18,3 +18,9 @@ Route::get('events/{id}', 'EventsController@show')->name('events.show');
 Route::get('events/category/{category}/{subcategory?}', 'EventsController@category');
 
 Route::get('events', 'EventsController@index');
+
+Route::get('locations', 'LocationsController@index');
+
+Route::get('languages', 'LanguagesController@index');
+
+Route::get('maps', 'MapsController@index');
