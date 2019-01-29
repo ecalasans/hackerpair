@@ -1,0 +1,1 @@
+<p>{{ $name }} is scheduled for {{ $date }}</p>
