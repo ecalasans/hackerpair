@@ -1,5 +1,5 @@
-<table>
-    @foreach($events as $event)
-        @include('partials._row', ['event' => $event])
-    @endforeach
-</table>
+@extends('layouts.app')
+
+@section('content')
+    <h1>Events</h1>
+@endsection

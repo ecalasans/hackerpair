@@ -1,12 +1,11 @@
 /**
  * Created by PhpStorm.
  * User: ericcalasans
- * Date: 2019-01-29
- * Time: 17:57
+ * Date: 2019-02-04
+ * Time: 16:06
  */
-
 @extends('layouts.app')
 
 @section('content')
-    <h1>Events</h1>
+    <h1>About the Book</h1>
 @endsection
