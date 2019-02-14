@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to HackerPair</title>
+    {!! HTML::style('css/app.css') !!}
 </head>
 <body>
     <div>
