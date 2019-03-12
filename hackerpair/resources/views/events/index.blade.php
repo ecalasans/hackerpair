@@ -2,13 +2,14 @@
 
 @section('content')
     <h1>Events</h1>
+
     <ul>
         @forelse($events as $event)
-            <li>{{$event->name}}</li>
+            <li>{{ $event->name }}</li>
         @empty
             <li>No events found!</li>
         @endforelse
     </ul>
-    {!! $events->links() !!}
 
+    {{ $events->links() }}
 @endsection

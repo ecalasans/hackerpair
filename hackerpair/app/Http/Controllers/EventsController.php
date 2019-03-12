@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class EventsController extends Controller{
 
     public function index(){
-        //
+        $events = Event::simplePaginate(10);
+        return view('events.index')->with('events', $events);
     }
 
 
@@ -22,7 +23,7 @@ class EventsController extends Controller{
 
 
     public function show(Event $event){
-        //
+        return view('events.show')->with('event', $event);
     }
 
 
