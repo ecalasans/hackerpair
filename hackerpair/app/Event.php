@@ -2,9 +2,13 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model{
+
+    use Sluggable;
+
     public function getNameAttribute($value){
         $ignore = ['a', 'and', 'at', 'but', 'for', 'in', 'the', 'to', 'with'];
 
@@ -21,5 +25,18 @@ class Event extends Model{
         }
 
         return join(' ', $modifiedName);
+    }
+
+    public function sluggable(): array{
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }
