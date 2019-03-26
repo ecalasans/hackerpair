@@ -4,10 +4,15 @@ namespace App;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Event extends Model{
 
     use Sluggable;
+
+    use SoftDeletes;
+
+    protected $dates =['created_at', 'deleted_at', 'started_at', 'updated_at'];
 
     public function getNameAttribute($value){
         $ignore = ['a', 'and', 'at', 'but', 'for', 'in', 'the', 'to', 'with'];
