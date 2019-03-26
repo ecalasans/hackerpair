@@ -18,7 +18,13 @@ class EventsController extends Controller{
     }
 
     public function store(Request $request){
-        //
+        $event = Event::create(
+            $request->input()
+        );
+
+        flash('Event created!')->success();
+
+        return redirect()->route('events.index');
     }
 
 

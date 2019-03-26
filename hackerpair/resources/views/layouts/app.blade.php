@@ -6,7 +6,8 @@
     {!! HTML::style('css/app.css') !!}
 </head>
 <body>
-    <div>
+    <div class="container">
+        @include('flash::message')
         @yield('content')
     </div>
     <div>
