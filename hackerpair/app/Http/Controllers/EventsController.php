@@ -13,11 +13,11 @@ class EventsController extends Controller{
     }
 
 
-    public function create(){
+    public function create(){   //Responsável por retornar a interface de introdução dos dados
         return view('events.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request){   //Responsável por escrever os dados no database
         $event = Event::create(
             $request->input()
         );
