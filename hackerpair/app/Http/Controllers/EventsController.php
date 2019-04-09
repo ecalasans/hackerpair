@@ -33,16 +33,26 @@ class EventsController extends Controller{
     }
 
 
-    public function edit(Event $event){
-        //
+    public function edit(Event $event){  //Responsável por retornar a interface de alteração
+        return view('events.edit')->with('event', $event);
     }
 
 
-    public function update(Request $request, Event $event){
-        //
+    public function update(Request $request, Event $event){  //Faz a alteração propriamente dita no banco de dados
+        $event->update(
+            $request->input()
+        );
+
+        flash('Event updated!')->success();
+
+        return redirect()->route('events.index', $event);
     }
 
     public function destroy(Event $event){
-        //
+        $event->delete();
+
+        flash('Event deleted!')->success();
+
+        return redirect()->route('events.index');
     }
 }
