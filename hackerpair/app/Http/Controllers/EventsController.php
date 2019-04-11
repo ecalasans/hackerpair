@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\EventStoreRequest;
 
 class EventsController extends Controller{
 
@@ -17,14 +19,7 @@ class EventsController extends Controller{
         return view('events.create');
     }
 
-    public function store(Request $request){   //Responsável por escrever os dados no database
-        $request->validate(
-            [
-                'name' => 'required|string|min:10|max:50',
-                'description' => 'required|string'
-            ]
-        );
-
+    public function store(EventStoreRequest $request){   //Responsável por escrever os dados no database
 
 
         $event = Event::create(
