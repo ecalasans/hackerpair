@@ -47,4 +47,8 @@ class Event extends Model{
     {
         return 'slug';
     }
+
+    public function state(){
+        return $this->belongsTo('App\State');
+    }
 }
