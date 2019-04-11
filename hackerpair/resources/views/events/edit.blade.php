@@ -1,24 +1,28 @@
-{!! Form::model($event,
-    [
-        'method' => 'put',
-        'route' => ['events.update', $event->slug],
-        'class' => 'form'
-    ]
-)
-!!}
+@extends('layouts.app')
 
-<div class="form-group">
-    {!! Form::label('name', 'Event name') !!}
-    {!! Form::text('name', null, ['class' => 'form-control']) !!}
-</div>
+@section('content')
+    {!! Form::model($event,
+        [
+            'method' => 'put',
+            'route' => ['events.update', $event->slug],
+            'class' => 'form'
+        ]
+        )
+    !!}
 
-<div class="form-group">
-    {!! Form::label('description', 'Event Description') !!}
-    {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
-</div>
+    <div class="form-group">
+        {!! Form::label('name', 'Event name') !!}
+        {!! Form::text('name', null, ['class' => 'form-control']) !!}
+    </div>
 
-<div class="form-group">
-    {!! Form::submit('Update Event', ['class' => 'btn btn-primary']) !!}
-</div>
+    <div class="form-group">
+        {!! Form::label('description', 'Event Description') !!}
+        {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+    </div>
 
-{!! Form::close() !!}
+    <div class="form-group">
+        {!! Form::submit('Update Event', ['class' => 'btn btn-primary']) !!}
+    </div>
+
+    {!! Form::close() !!}
+@endsection

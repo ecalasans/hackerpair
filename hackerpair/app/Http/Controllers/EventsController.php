@@ -18,6 +18,15 @@ class EventsController extends Controller{
     }
 
     public function store(Request $request){   //Responsável por escrever os dados no database
+        $request->validate(
+            [
+                'name' => 'required|string|min:10|max:50',
+                'description' => 'required|string'
+            ]
+        );
+
+
+
         $event = Event::create(
             $request->input()
         );
