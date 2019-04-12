@@ -15,7 +15,7 @@ class Event extends Model{
 
     protected $dates =['created_at', 'deleted_at', 'started_at', 'updated_at'];
 
-    protected $fillable = ['name', 'venue', 'description'];
+    protected $fillable = ['name', 'venue', 'state_id', 'description'];
 
     public function getNameAttribute($value){
         $ignore = ['a', 'and', 'at', 'but', 'for', 'in', 'the', 'to', 'with'];

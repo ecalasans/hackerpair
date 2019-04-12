@@ -29,6 +29,7 @@ Route::view('contact', 'contact.index')->name('contact.index');
 
 Route::resource('events', 'EventsController');  //Route Model Binding
 
+Route::resource('states', 'StatesController');
 
 Route::get('languages', 'LanguagesController@index')->name('languages.index');
 
