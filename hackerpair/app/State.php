@@ -13,4 +13,8 @@ class State extends Model{
     {
         return 'abbreviation';
     }
+
+    public function users(){
+        return $this->hasMany(User::class);
+    }
 }

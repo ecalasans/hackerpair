@@ -32,4 +32,14 @@ class User extends Authenticatable
         return $this->hasOne('App\Profile');
     }
 
+    public function events(){
+        return $this->belongsToMany(Event::class)
+            ->withPivot('comment')
+            ->withTimestamps();
+    }
+
+    public function state(){
+        return $this->belongsTo(State::class);
+    }
+
 }

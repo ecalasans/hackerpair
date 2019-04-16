@@ -51,4 +51,10 @@ class Event extends Model{
     public function state(){
         return $this->belongsTo('App\State');
     }
+
+    public function users(){
+        return $this->belongsToMany(User::class)
+            ->withPivot('comment')
+            ->withTimestamps();
+    }
 }
